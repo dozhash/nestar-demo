@@ -4,6 +4,10 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   reactStrictMode: true,
+
+  sassOptions: {
+    silenceDeprecations: ["import"],
+  },
 };
 
 export default nextConfig;
