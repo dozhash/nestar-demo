@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Stack, Box } from "@mui/material";
-import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import WestIcon from "@mui/icons-material/West";
+import EastIcon from "@mui/icons-material/East";
 import { Swiper, SwiperSlide } from "swiper/react";
 import TopAgentCard from "./TopAgentCard";
 
-const TopAgents = ({ initialInput, ...props }: any) => {
+const TopAgents = () => {
   const [topAgents, setTopAgents] = useState<number[]>([1, 2, 3, 4, 5, 6, 7]);
 
   return (
@@ -24,7 +25,7 @@ const TopAgents = ({ initialInput, ...props }: any) => {
         </Stack>
         <Stack className={"wrapper"}>
           <Box className={"switch-btn swiper-agents-prev"}>
-            <ArrowBackIosNewIcon />
+            <WestIcon />
           </Box>
           <Box className={"card-wrapper"}>
             <Swiper
@@ -45,8 +46,13 @@ const TopAgents = ({ initialInput, ...props }: any) => {
               })}
             </Swiper>
           </Box>
+          <Box className={"switch-btn swiper-agents-next"}>
+            <EastIcon />
+          </Box>
         </Stack>
       </Stack>
     </Stack>
   );
 };
+
+export default TopAgents;

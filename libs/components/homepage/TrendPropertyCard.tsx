@@ -6,7 +6,7 @@ import RemoveRedeEyeIcon from "@mui/icons-material/RemoveRedEye";
 
 const TrendPropertyCard = () => {
   return (
-    <Stack className="top-card-box">
+    <Stack className="trend-card-box">
       <Box
         className={"card-img"}
         style={{
