@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { Stack, Box } from "@mui/material";
 import WestIcon from "@mui/icons-material/West";
 import EastIcon from "@mui/icons-material/East";
 import { Swiper, SwiperSlide } from "swiper/react";
 import TopAgentCard from "./TopAgentCard";
 
-const TopAgents = () => {
-  const [topAgents, setTopAgents] = useState<number[]>([1, 2, 3, 4, 5, 6, 7]);
+const topAgents = Array.from({ length: 5 }, (_, index) => ({
+  id: index + 1,
+  name: "Martin",
+}));
 
+const TopAgents = () => {
   return (
     <Stack className={"top-agents"}>
       <Stack className={"container"}>
@@ -31,16 +34,16 @@ const TopAgents = () => {
             <Swiper
               className={"top-agents-swiper"}
               slidesPerView={"auto"}
-              spaceBetween={29}
+              spaceBetween={44}
               navigation={{
                 nextEl: ".swiper-agents-next",
                 prevEl: ".swiper-agents-prev",
               }}
             >
-              {topAgents.map((agent, index) => {
+              {topAgents.map((agent) => {
                 return (
-                  <SwiperSlide className={"top-agents-slide"} key={index}>
-                    <TopAgentCard />
+                  <SwiperSlide className={"top-agents-slide"} key={agent.id}>
+                    <TopAgentCard name={agent.name} />
                   </SwiperSlide>
                 );
               })}
