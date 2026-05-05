@@ -7,7 +7,7 @@ import Filter from "@/libs/components/property/Filter";
 import PropertyCard from "@/libs/components/property/PropertyCard";
 
 const PropertyList: NextPage = () => {
-  const [properties, setProperties] = useState<number[]>([1, 2, 3, 4, 5, 6]);
+  const [properties] = useState<number[]>([1, 2, 3, 4, 5, 6]);
 
   return (
     <div id="property-list-page" style={{ position: "relative" }}>
